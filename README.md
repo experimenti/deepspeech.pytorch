@@ -1,10 +1,15 @@
 # deepspeech.pytorch
 
 Forked from SeanNaren/deepspeech.pytorch
+
 Removed torch from requirement.txt - testing with python 3.7 and Pytorch 1.0 (pre-release)
+
 Instructions are the same as below with these exceptions:
 - Attempted to use the binaries (e.g. pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html) but hit an issue with the cpp extension for torchaudio - investigating
-- Built from Pytorch source using conda: # Follow instructions at this URL: https://github.com/pytorch/pytorch#from-source, except conda install -c pytorch magma-cuda92
+
+- Built from Pytorch source using conda: Follow instructions at this URL: https://github.com/pytorch/pytorch#from-source, except conda install -c pytorch magma-cuda92
+
+# Naren Doc
 
 Implementation of DeepSpeech2 using [Baidu Warp-CTC](https://github.com/baidu-research/warp-ctc).
 Creates a network based on the [DeepSpeech2](http://arxiv.org/pdf/1512.02595v1.pdf) architecture, trained with the CTC activation function.
