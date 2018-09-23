@@ -1,5 +1,6 @@
 import argparse
 import warnings
+import sys
 
 from opts import add_decoder_args, add_inference_args
 
@@ -16,7 +17,7 @@ import json
 
 parser = argparse.ArgumentParser(description='DeepSpeech transcription')
 parser = add_inference_args(parser)
-parser.add_argument('--audio-path', default='audio.wav',
+parser.add_argument('--audio-path', default=None,
                     help='Audio file to predict on')
 parser.add_argument('--offsets', dest='offsets', action='store_true', help='Returns time offset information')
 parser = add_decoder_args(parser)
@@ -65,6 +66,11 @@ def transcribe(audio_path, parser, model, decoder, cuda=False):
 
 if __name__ == '__main__':
     torch.set_grad_enabled(False)
+
+    if args.audio_path is None:
+        print("Error: Path to audio file is required: --audio-path" )
+        sys.exit(1)
+
     model = DeepSpeech.load_model(args.model_path)
     if args.cuda:
         model.cuda()
