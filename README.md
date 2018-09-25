@@ -2,10 +2,9 @@
 
 Forked from SeanNaren/deepspeech.pytorch
 
-Removed torch from requirement.txt - testing with python 3.7 and Pytorch 1.0 (pre-release)
+Added nightly build of Pytorch to requirements.txt - testing with python 3.7 and Pytorch 1.0 (pre-release)
 
-Instructions are the same as below with these exceptions:
-- Attempted to use the binaries (e.g. pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html) but hit an issue with the cpp extension for torchaudio - investigating
+## Optionally: 
 
 - Built from Pytorch source using conda: Follow instructions at this URL: https://github.com/pytorch/pytorch#from-source, except conda install -c pytorch magma-cuda92
 
@@ -31,6 +30,7 @@ an Anaconda installation on Ubuntu.
 
 Install [PyTorch](https://github.com/pytorch/pytorch#installation) if you haven't already 
 Source install: # https://github.com/pytorch/pytorch#from-source
+or, typically: conda install pytorch-nightly -c pytorch
 
 
 Install this fork for Warp-CTC bindings:
@@ -54,6 +54,7 @@ cd audio
 pip install cffi
 python setup.py install
 ```
+# If you are working with on-going releases of the pytorch code, delete any old compiled binaries in /build prior to running the setup so the extension links with correct version.
 
 If you want decoding to support beam search with an optional language model, install ctcdecode:
 ```
