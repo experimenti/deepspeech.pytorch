@@ -34,6 +34,17 @@ Install [PyTorch 1.0](https://pytorch.org/get-started/locally/) if you haven't a
 or, typically: pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
 
 
+# Pytorch Audio
+
+```
+sudo apt-get install sox libsox-dev libsox-fmt-all
+git clone https://github.com/pytorch/audio.git
+cd audio
+pip install cffi
+python setup.py install
+```
+
+
 Finally clone this repo and run this within the repo:
 ```
 pip install -r requirements.txt
