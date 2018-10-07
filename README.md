@@ -9,7 +9,7 @@ Testing with python 3.7 and Pytorch 1.0 (pre-release)
 
 ## Features
 
-Sean Naren's excellent implentation contains a lot of functionality (distributed training, etc.) that is not included here.
+Sean Naren's excellent implementation contains a lot of functionality (distributed training, etc.) that is not (yet) included here, see WIP below.
 
 * Train DeepSpeech, configurable RNN types with Pytorch 1.0 CTC Loss
 * Multiple dataset downloaders, support for AN4, TED, Voxforge and Librispeech. Datasets can be merged, support for custom datasets included.
@@ -37,8 +37,6 @@ pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch
 
 ```
 # Pytorch Audio
-```
-
 ```
 sudo apt-get install sox libsox-dev libsox-fmt-all
 git clone https://github.com/pytorch/audio.git
