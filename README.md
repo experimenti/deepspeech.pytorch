@@ -15,13 +15,13 @@ Sean Naren's excellent implentation contains a lot of functionality (distributed
 * Multiple dataset downloaders, support for AN4, TED, Voxforge and Librispeech. Datasets can be merged, support for custom datasets included.
 
 WIP:
-- [] multi-gpu support.
-- [] cpu support.
-- [] Language model support using kenlm (WIP right now, currently no instructions to build a LM yet).
-- [] Noise injection for online training to improve noise robustness.
-- [] Audio augmentation to improve noise robustness.
-- []  Easy start/stop capabilities in the event of crash or hard stop during training.
-- [] Visdom/Tensorboard support for visualizing training graphs.
+- [ ] multi-gpu support.
+- [ ] cpu support.
+- [ ] Language model support using kenlm (WIP right now, currently no instructions to build a LM yet).
+- [ ] Noise injection for online training to improve noise robustness.
+- [ ] Audio augmentation to improve noise robustness.
+- [ ]  Easy start/stop capabilities in the event of crash or hard stop during training.
+- [ ] Visdom/Tensorboard support for visualizing training graphs.
 
 # Installation
 
@@ -31,10 +31,13 @@ conda create -n deepspeech python=3.7
 ```
 
 Install [PyTorch 1.0](https://pytorch.org/get-started/locally/) if you haven't already 
-or, typically: pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
+or, typically: 
 
+pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
 
+```
 # Pytorch Audio
+```
 
 ```
 sudo apt-get install sox libsox-dev libsox-fmt-all
