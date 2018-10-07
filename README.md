@@ -23,20 +23,24 @@ WIP:
 - [ ]  Easy start/stop capabilities in the event of crash or hard stop during training.
 - [ ] Visdom/Tensorboard support for visualizing training graphs.
 
-# Installation
+## Installation
 
 conda / ubuntu with typings and python 3.7
+
 ```
 conda create -n deepspeech python=3.7
 ```
 
 Install [PyTorch 1.0](https://pytorch.org/get-started/locally/) if you haven't already 
-or, typically: 
+or, typically
 
-pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
 
 ```
+pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
+```
+
 # Pytorch Audio
+
 ```
 sudo apt-get install sox libsox-dev libsox-fmt-all
 git clone https://github.com/pytorch/audio.git
@@ -47,11 +51,12 @@ python setup.py install
 
 
 Finally clone this repo and run this within the repo:
+
 ```
 pip install -r requirements.txt
 ```
 
-```
+
 # Usage
 
 ## Dataset
