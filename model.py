@@ -1,11 +1,8 @@
 import math
-from collections import OrderedDict
-
 import torch
-import torch.nn as nn
+from collections import OrderedDict
 import torch.nn.functional as F
-from torch.nn.parameter import Parameter
-from torch.autograd import Variable
+import torch.nn as nn
 
 supported_rnns = {
     'lstm': nn.LSTM,
@@ -24,6 +21,7 @@ class SequenceWise(nn.Module):
         """
         super(SequenceWise, self).__init__()
         self.module = module
+    
 
     def forward(self, x):
         t, n = x.size(0), x.size(1)

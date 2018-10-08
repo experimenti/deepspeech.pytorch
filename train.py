@@ -8,7 +8,7 @@ from model import DeepSpeech
 from data.utils import reduce_tensor
 from decoder import GreedyDecoder
 from data.data_loader import SpectrogramDataset, BucketingSampler, AudioDataLoader
-from torch.nn import CTCLoss as TorchCTCLoss
+from torch.nn import CTCLoss 
 
 from typing import Dict
 from tqdm import tqdm
@@ -47,8 +47,8 @@ def getOptions():
 
     options['audio_conf'] = audio_conf
 
-    options['data']['train_manifest'] = 'data/train_manifest.csv'
-    options['data']['val_manifest'] = 'data/val_manifest.csv'
+    options['data']['train_manifest'] = 'data/an4_train_manifest.csv'
+    options['data']['val_manifest'] = 'data/an4_val_manifest.csv'
     options['data']['audio_conf'] = audio_conf
     options['data']['augment'] = False 
     options['data']['batch_size'] = 16 
@@ -123,9 +123,13 @@ def load_test_train_data(audio_conf, train_manifest, val_manifest, labels, batch
 
 def train(rnn, rnn_parameters, train_loader, train_sampler, epochs=20, loss_function='pytorch', model_path='models/deepspeech_final.pth', models_folder='models', cuda=True, max_norm=400, lr=None, learning_anneal=1.1, momentum=None):
 
+
+    os.makedirs(models_folder, exist_ok=True)
+
     avg_loss, start_epoch, start_iter = 0, 0, 0
 
-    criterion = TorchCTCLoss(reduction='sum')
+
+    criterion = CTCLoss(reduction='sum')
 
     losses = AverageMeter()
     batch_time = AverageMeter()
@@ -296,6 +300,7 @@ if __name__ == '__main__':
         rnn.cuda()
 
     print(rnn)
+
 
     train_loader, test_loader, train_sampler = load_test_train_data(**options['data'],**options['spectrogram'],**options['dataLoader']) 
     train(rnn, parameters, train_loader, train_sampler, **options['train'],**options['optimizer'])

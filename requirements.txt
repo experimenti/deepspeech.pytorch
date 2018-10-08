@@ -3,5 +3,3 @@ visdom
 wget
 librosa
 tqdm
-
-# Compiling Pytorch
