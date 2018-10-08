@@ -32,11 +32,10 @@ conda create -n deepspeech python=3.7
 ```
 
 Install [PyTorch 1.0](https://pytorch.org/get-started/locally/) if you haven't already 
-or, typically
-
+or, typically (with cuda 9.2):
 
 ```
-pip install torch_nightly -f https://download.pytorch.org/whl/nightly/cu92/torch_nightly.html
+conda install pytorch-nightly cuda92 -c pytorch
 ```
 
 # Pytorch Audio
