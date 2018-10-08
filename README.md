@@ -38,7 +38,7 @@ or, typically (with cuda 9.2):
 conda install pytorch-nightly cuda92 -c pytorch
 ```
 
-# Pytorch Audio
+## Pytorch Audio
 
 ```
 sudo apt-get install sox libsox-dev libsox-fmt-all
